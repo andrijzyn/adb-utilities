@@ -18,6 +18,7 @@ const std::string DEVICES_LACK = "adb: no devices/emulators found";
 enum class MenuOption : uint8_t { GUIDE, LISTPKG, CLEAN, EXIT };
 
 // Package list
+// Package list
 const std::vector<std::string> PACKAGES = {
     "com.samsung.android.smartswitchassistant",  // Samsung Smart Switch Assistant
     "com.samsung.android.themestore",            // Samsung Theme Store
@@ -28,15 +29,15 @@ const std::vector<std::string> PACKAGES = {
     "com.samsung.android.app.updatecenter",      // Update Center
     "com.samsung.android.shortcutbackupservice", // Shortcut Backup Service
     "com.samsung.android.scloud",                // Samsung Cloud
-    "com.samsung.android.app.sharelive",         // Samsung Live Sharing
-    "com.samsung.android.dialer",                // Phone/Dialer
-    "com.samsung.android.messaging",             // Samsung Messages
-    "com.samsung.android.app.contacts",          // Samsung Contacts
+    // "com.samsung.android.app.sharelive",      // Quick Share
+    // "com.samsung.android.dialer",             // KEEP: Phone, no replacement installed
+    "com.samsung.android.messaging",             // Samsung Messages (set Google Messages as default SMS first)
+    // "com.samsung.android.app.contacts",       // KEEP: Contacts, no replacement installed
     "com.samsung.sree",                          // Samsung Services
     "com.samsung.android.app.tips",              // Samsung Tips
     "com.samsung.android.app.parentalcare",      // Parental Control
     "com.samsung.android.aremoji",               // Samsung AR Emoji
-    "com.sec.android.app.samsungapps",           // Galaxy Store
+    // "com.sec.android.app.samsungapps",        // KEEP: Galaxy Store (updates for Samsung apps)
     "com.sec.android.easyMover.Agent",           // Smart Switch Agent
     "com.sec.android.app.chromecustomizations",  // Chrome Customizations
     "com.android.chrome",                        // Google Chrome
@@ -52,9 +53,43 @@ const std::vector<std::string> PACKAGES = {
     "com.google.android.apps.tachyon",           // Google Duo/Meet
     "com.netflix.mediaclient",                   // Netflix App
     "com.scopely.monopolygo",                    // Monopoly GO! Game
-    "com.samsung.android.bbc.bbcagent",          // Samsung BBC Agent
+    // "com.samsung.android.bbc.bbcagent",       // CHECK: Knox-related, Secure Folder in use
     "com.samsung.android.privateshare",          // Samsung Private Share
-    "com.aura.oobe.samsung.gl"                   // AppCloud
+    "com.aura.oobe.samsung.gl",                  // AppCloud
+
+    // --- Added: telemetry & marketing ---
+    "com.sec.android.diagmonagent",              // Samsung diagnostics / telemetry
+    "com.samsung.android.dqagent",               // Device Quality Agent
+    "com.samsung.android.rubin.app",             // Customization Service (personalization)
+    "com.samsung.android.ipsgeofence",           // Samsung Visit In (geofencing promos)
+    "com.samsung.android.voc",                   // Samsung Members
+    "com.google.android.feedback",               // Google Feedback
+
+    // --- Added: AR Emoji & stickers ---
+    "com.samsung.android.aremojieditor",         // AR Emoji Editor
+    "com.sec.android.mimage.avatarstickers",     // AR Emoji stickers
+    "com.samsung.android.app.camera.sticker.facearavatar.preload", // Camera AR stickers
+
+    // --- Added: Bixby (only if unused) ---
+    "com.samsung.android.bixby.agent",           // Bixby Voice
+    "com.samsung.android.bixby.wakeup",          // "Hi, Bixby" wake-up
+    "com.samsung.android.visionintelligence",    // Bixby Vision
+
+    // --- Added: no matching device / service ---
+    "com.microsoft.appmanager",                  // Link to Windows (Windows PC only)
+    "com.samsung.android.app.watchmanagerstub",  // Galaxy Wearable stub (no Galaxy Watch)
+    "com.samsung.android.carkey",                // Digital Car Key
+    "com.samsung.android.spayfw",                // Samsung Pay framework (Google Wallet used)
+    "com.sec.android.easyMover",                 // Smart Switch (one-time migration)
+    "com.google.android.videos",                 // Google TV
+
+    // --- Added: optional ---
+    "com.hiya.star",                             // Caller ID & spam protection in Samsung Phone
+    // "com.samsung.android.widget.pictureframe",   // Picture frame widget
+    "com.sec.android.widgetapp.easymodecontactswidget", // Easy Mode contacts widget
+    "com.google.android.printservice.recommendation",   // Print service recommendations
+    "com.android.dreams.phototable",             // Photo screensaver
+    "com.android.egg",                           // Android easter egg
 };
 
 // Execute a command and get its output
